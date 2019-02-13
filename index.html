@@ -28,6 +28,45 @@
 			<link rel="stylesheet" href="css/animate.min.css">
 			<link rel="stylesheet" href="css/owl.carousel.css">
 			<link rel="stylesheet" href="css/main.css">
+
+<script type="text/javascript">
+/* Máscaras ER */
+function mascara(o,f){
+    v_obj=o
+    v_fun=f
+    setTimeout("execmascara()",1)
+}
+function execmascara(){
+    v_obj.value=v_fun(v_obj.value)
+}
+function mtel(v){
+    v=v.replace(/\D/g,"");             //Remove tudo o que não é dígito
+    v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+    v=v.replace(/(\d)(\d{4})$/,"$1-$2");    //Coloca hífen entre o quarto e o quinto dígitos
+    return v;
+}
+function id( el ){
+  return document.getElementById( el );
+}
+window.onload = function(){
+  id('telefone').onkeyup = function(){
+    mascara( this, mtel );
+  }
+}
+</script>
+
+<style>
+.btn-primary
+{
+  background-color: #0070bb;
+}
+</style>
+
+
+
+
+
+
 		</head>
 		<body>
 
@@ -40,9 +79,9 @@
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="#home">Home</a></li>
-				          <li><a href="#offer">Serviços</a></li>
-				          <li><a href="#about">Sobre</a></li>
-				          <li><a href="#project">Contato</a></li>
+				          <li><a href="#servicos">Serviços</a></li>
+				          <li><a href="#sobre">Sobre</a></li>
+				          <li><a href="#contato">Contato</a></li>
 				         
 				        </ul>
 				      </nav><!-- #nav-menu-container -->		    		
@@ -69,7 +108,7 @@
 			<!-- End banner Area -->	
 
 			<!-- Start we-offer Area -->
-			<section class="we-offer-area section-gap" id="offer">
+			<section class="we-offer-area section-gap" id="servicos">
 				<div class="container">
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-60 col-lg-10">
@@ -135,7 +174,7 @@
 			
 
 			<!-- Start home-aboutus Area -->
-			<section class="home-aboutus-area">
+			<section class="home-aboutus-area" id="sobre>
 				<div class="container-fluid">
 					<div class="row justify-content-center align-items-center">
 						<div class="col-lg-8 no-padding about-left">
@@ -153,106 +192,9 @@
 					</div>
 				</div>	
 			</section>
-			<!-- End home-aboutus Area -->
-			
-		<!--
-
-
-
-			<section class="protfolio-area section-gap" id="project">
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content pb-60 col-lg-10">
-							<div class="title text-center">
-								<h1 class="mb-10">Our Offered Services</h1>
-								<p>Who are in extremely love with eco friendly system.</p>
-							</div>
-						</div>
-					</div>						
-					<div class="row">
-						<div class="col-lg-8 single-portfolio">
-						  <img class="image img-fluid" src="img/p1.jpg" alt="">
-						  <a href="img/p1.jpg" class="img-pop-up">	
-							  <div class="middle">
-							    <div class="text"><span class="lnr lnr-frame-expand"></span></div>
-							  </div>
-						  </a>
-						</div>
-						<div class="col-lg-4 single-portfolio">
-						  <img class="image img-fluid" src="img/p2.jpg" alt="">
-						  <a href="img/p2.jpg" class="img-pop-up">	
-							  <div class="middle">
-							    <div class="text"><span class="lnr lnr-frame-expand"></span></div>
-							  </div>
-						  </a>
-						</div>
-						<div class="col-lg-4 single-portfolio">
-						  <img class="image img-fluid" src="img/p3.jpg" alt="">
-						  <a href="img/p3.jpg" class="img-pop-up">	
-							  <div class="middle">
-							    <div class="text"><span class="lnr lnr-frame-expand"></span></div>
-							  </div>
-						  </a>
-						</div>
-						<div class="col-lg-8 single-portfolio">
-						  <img class="image img-fluid" src="img/p4.jpg" alt="">
-						  <a href="img/p4.jpg" class="img-pop-up">	
-							  <div class="middle">
-							    <div class="text"><span class="lnr lnr-frame-expand"></span></div>
-							  </div>
-						  </a>
-						</div>
-						<div class="col-lg-6 single-portfolio">
-						  <img class="image img-fluid" src="img/p5.jpg" alt="">
-						  <a href="img/p5.jpg" class="img-pop-up">	
-							  <div class="middle">
-							    <div class="text"><span class="lnr lnr-frame-expand"></span></div>
-							  </div>
-						  </a>
-						</div>
-						<div class="col-lg-6 single-portfolio">
-						  <img class="image img-fluid" src="img/p6.jpg" alt="">
-						  <a href="img/p6.jpg" class="img-pop-up">	
-							  <div class="middle">
-							    <div class="text"><span class="lnr lnr-frame-expand"></span></div>
-							  </div>
-						  </a>
-						</div>						
-					</div>
-				</div>	
-			</section>
-			
-			End protfolio Area 
-
-
-			Start callto-action Area
-
-
-			<section class="callto-action-area relative section-gap">
-				<div class="overlay overlay-bg"></div>	
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content col-lg-9">
-							<div class="title text-center">
-								<h1 class="mb-10 text-white">Got Impressed to our features</h1>
-								<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-								<a class="primary-btn" href="#">Request Free Demo</a>
-							</div>
-						</div>
-					</div>	
-				</div>	
-			</section>
 			
 
-			End calto-action Area 
-
-			
-		
-		
-		 Start price Area
--->
-
-			<section class="price-area section-gap" id="price">
+			<section class="price-area section-gap" id="contato">
 				<div class="container">
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-60 col-lg-8">
@@ -262,19 +204,28 @@
 							</div>
 
 							<div class="menu-content pb-60 col-lg-8">
-								<form>
+								<form action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSeCNbk_PUxGQ11zxmJIQpOb0EhEkaXORID31ZJWHLufrCUH5Q/formResponse" target="_self" method="POST" id="mG61Hd">
 								  <div class="form-group">
 								    <label for="exampleInputEmail1">Nome</label>
-								    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+								    <input type="text" class="form-control" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="Nome" aria-describedby="i.desc.1770118050 i.err.1770118050" name="entry.181991852" >
 								  </div>
 								  <div class="form-group">
 								    <label for="exampleInputEmail1">Email</label>
-								    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+
+								    <input type="email" class="form-control"  jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="Email" aria-describedby="i.desc.1911715201 i.err.1911715201" name="entry.1138549177">
+
+
 								  </div>
 								  <div class="form-group">
-								    <label for="exampleInputEmail1">Telefone</label>
-								    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="(51) 12345 6789">
+								    <label for="exampleInputEmail1">Telefone com DDD</label>
+    								<input type="text" id="telefone" class="form-control" maxlength="15"  jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="Telefone" aria-describedby="i.desc.1880745093 i.err.1880745093" name="entry.394356097" >
 								  </div>
+
+								  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Mensagem</label>
+    <textarea class="form-control"  jsname="YPqjbf" data-rows="1" tabindex="0" aria-label="Texto" jscontroller="gZjhIf" jsaction="input:Lg5SV;ti6hGc:XMgOHc;rcuQ6b:WYd;" name="entry.769039408" dir="auto" data-initial-dir="auto" data-initial-value="" aria-describedby="i.desc.2138011662 i.err.2138011662"></textarea>
+  </div>
 								  
 								  <button type="submit" class="btn btn-primary">Enviar</button>
 								</form>
@@ -282,172 +233,7 @@
 
 				</div>	
 			</section>
-			<!--
 			
-			End price Area
-
-			
-			Start testomial Area
-
-
-			<section class="testomial-area section-gap">
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content pb-60 col-lg-8">
-							<div class="title text-center">
-								<h1 class="mb-10">Testimonial from our Clients</h1>
-								<p>Who are in extremely love with eco friendly system.</p>
-							</div>
-						</div>
-					</div>						
-					<div class="row">
-						<div class="active-tstimonial-carusel">
-							<div class="single-testimonial item">
-								<img class="mx-auto" src="img/t1.png" alt="">
-								<p class="desc">
-									Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-								</p>
-								<h4>Mark Alviro Wiens</h4>
-								<p>
-									CEO at Google
-								</p>
-							</div>
-							<div class="single-testimonial item">
-								<img class="mx-auto" src="img/t2.png" alt="">
-								<p class="desc">
-									Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-								</p>
-								<h4>Mark Alviro Wiens</h4>
-								<p>
-									CEO at Google
-								</p>
-							</div>
-							<div class="single-testimonial item">
-								<img class="mx-auto" src="img/t3.png" alt="">
-								<p class="desc">
-									Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-								</p>
-								<h4>Mark Alviro Wiens</h4>
-								<p>
-									CEO at Google
-								</p>
-							</div>	
-							<div class="single-testimonial item">
-								<img class="mx-auto" src="img/t1.png" alt="">
-								<p class="desc">
-									Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-								</p>
-								<h4>Mark Alviro Wiens</h4>
-								<p>
-									CEO at Google
-								</p>
-							</div>
-							<div class="single-testimonial item">
-								<img class="mx-auto" src="img/t2.png" alt="">
-								<p class="desc">
-									Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-								</p>
-								<h4>Mark Alviro Wiens</h4>
-								<p>
-									CEO at Google
-								</p>
-							</div>
-							<div class="single-testimonial item">
-								<img class="mx-auto" src="img/t3.png" alt="">
-								<p class="desc">
-									Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-								</p>
-								<h4>Mark Alviro Wiens</h4>
-								<p>
-									CEO at Google
-								</p>
-							</div>															
-							<div class="single-testimonial item">
-								<img class="mx-auto" src="img/t1.png" alt="">
-								<p class="desc">
-									Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-								</p>
-								<h4>Mark Alviro Wiens</h4>
-								<p>
-									CEO at Google
-								</p>
-							</div>
-							<div class="single-testimonial item">
-								<img class="mx-auto" src="img/t2.png" alt="">
-								<p class="desc">
-									Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-								</p>
-								<h4>Mark Alviro Wiens</h4>
-								<p>
-									CEO at Google
-								</p>
-							</div>
-							<div class="single-testimonial item">
-								<img class="mx-auto" src="img/t3.png" alt="">
-								<p class="desc">
-									Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-								</p>
-								<h4>Mark Alviro Wiens</h4>
-								<p>
-									CEO at Google
-								</p>
-							</div>														
-						</div>
-					</div>
-				</div>	
-			</section>
-			
-			 End testomial Area -->
-
-			
-			
-			<!--Start latest-blog Area
-
-
-			<section class="latest-blog-area section-gap" id="blog">
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content pb-60 col-lg-8">
-							<div class="title text-center">
-								<h1 class="mb-10">Latest News from our Blog</h1>
-								<p>Who are in extremely love with eco friendly system.</p>
-							</div>
-						</div>
-					</div>					
-					<div class="row">
-						<div class="col-lg-6 single-blog">
-							<img class="img-fluid" src="img/b1.jpg" alt="">
-							<ul class="tags">
-								<li><a href="#">Travel</a></li>
-								<li><a href="#">Life style</a></li>
-							</ul>
-							<a href="#"><h4>Portable latest Fashion for young women</h4></a>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore.
-							</p>
-							<p class="post-date">31st January, 2018</p>
-						</div>
-						<div class="col-lg-6 single-blog">
-							<img class="img-fluid" src="img/b2.jpg" alt="">
-							<ul class="tags">
-								<li><a href="#">Travel</a></li>
-								<li><a href="#">Life style</a></li>
-							</ul>
-							<a href="#"><h4>Portable latest Fashion for young women</h4></a>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore.
-							</p>
-							<p class="post-date">31st January, 2018</p>
-						</div>						
-					</div>
-				</div>	
-			</section>
-			
-			 End latest-blog Area
-
-			-->
-
-
 
 			<!-- start footer Area -->		
 			<footer class="footer-area section-gap">
@@ -455,53 +241,24 @@
 					<div class="row">
 						<div class="col-lg-3  col-md-12">
 							<div class="single-footer-widget">
-								<h6>Top Products</h6>
+								<h6>Nexo </h6>
+						
 								<ul class="footer-nav">
-									<li><a href="#">Managed Website</a></li>
-									<li><a href="#">Manage Reputation</a></li>
-									<li><a href="#">Power Tools</a></li>
-									<li><a href="#">Marketing Service</a></li>
+									<li></li>
+									<li>Terrenos para Incorporação</li><br>
+									<li>Av. Ipiranga, 40, sala 2003</li>
+									<li>(51) 3023.5616</li>
+									<li>contato@nexoterrenos.com.br</li>
+									<li>Porto Alegre, RS</li>
+
 								</ul>
 							</div>
 						</div>
 					<div class="col-lg-6  col-md-12">
 							<div class="single-footer-widget newsletter">
-								<h6>Newsletter</h6>
-								<p>You can trust us. we only send promo offers, not a single spam.</p>
-								<div id="mc_embed_signup">
-									<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-
-										<div class="form-group row" style="width: 100%">
-											<div class="col-lg-8 col-md-12">
-												<input name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-												<div style="position: absolute; left: -5000px;">
-													<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-												</div>
-											</div> 
-										
-											<div class="col-lg-4 col-md-12">
-												<button class="nw-btn primary-btn">Subscribe<span class="lnr lnr-arrow-right"></span></button>
-											</div> 
-										</div>		
-										<div class="info"></div>
-									</form>
-								</div>		
 							</div>
 						</div> 
 						<div class="col-lg-3  col-md-12">
-							<div class="single-footer-widget mail-chimp">
-								<h6 class="mb-20">Instragram Feed</h6>
-								<ul class="instafeed d-flex flex-wrap">
-									<li><img src="img/i1.jpg" alt=""></li>
-									<li><img src="img/i2.jpg" alt=""></li>
-									<li><img src="img/i3.jpg" alt=""></li>
-									<li><img src="img/i4.jpg" alt=""></li>
-									<li><img src="img/i5.jpg" alt=""></li>
-									<li><img src="img/i6.jpg" alt=""></li>
-									<li><img src="img/i7.jpg" alt=""></li>
-									<li><img src="img/i8.jpg" alt=""></li>
-								</ul>
-							</div>
 						</div>						
 					</div>
 
